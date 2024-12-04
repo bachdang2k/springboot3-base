@@ -1,0 +1,53 @@
+springdoc:
+  swagger-ui:
+    tryItOutEnabled: false
+    operationsSorter: method
+    tagsSorter: alpha
+app:
+  jwt:
+    jwtSecret: 0f68466e2e60e0892a0fcbf183926cfc10b4db9a
+    jwtExpirationDay: 60
+  open-api:
+    server-url: http://localhost:8030
+logging:
+  config: logback.xml
+server:
+  port: 8030
+  servlet:
+    context-path: /be
+spring:
+  datasource:
+    benv:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://10.84.86.33:3306/dev_01
+      username: rdvivas
+      password: rdvivas@123
+      hikari-idle-timeout: 150000
+      hikari-maximum-pool-size: 20
+      hikari-minimum-idle: 5
+      hikari-connection-timeout: 300000
+      hikari-pool-name: "UserService Connection Pool"
+      hibernate-dialect: org.hibernate.dialect.MySQLDialect
+      hibernate-show-sql: true
+      hibernate-ddl-auto: none
+      hibernate-format-sql: true
+      hibernate-batch-size: 500
+    yum:
+      driver-class-name: oracle.jdbc.OracleDriver
+      url: jdbc:oracle:thin:@10.84.5.94:1521/ORCL
+      username: NPMCORE
+      password: NPMCORE123
+      hikari-idle-timeout: 150000
+      hikari-maximum-pool-size: 20
+      hikari-minimum-idle: 5
+      hikari-connection-timeout: 300000
+      hikari-pool-name: "UserService1 Connection Pool"
+      hibernate-dialect: org.hibernate.dialect.Oracle12cDialect
+      hibernate-show-sql: true
+      hibernate-ddl-auto: none
+      hibernate-format-sql: true
+      hibernate-batch-size: 500
+management:
+  tracing:
+    sampling:
+      probability: 1.0
